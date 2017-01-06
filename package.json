@@ -1,0 +1,27 @@
+{
+  "name": "responsiveangular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./bundle/app.js",
+  "dependencies": {
+    "angular-ui-bootstrap": "^2.4.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "jquery": "^3.1.1",
+    "morgan": "^1.7.0",
+    "underscore": "^1.8.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
