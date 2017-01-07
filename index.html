@@ -2,19 +2,33 @@
 <html>
 <head>
   <title>Responsive Angular App</title>
+  <!-- CSS -->
   <link rel="stylesheet" href="./bundle/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- JS Dependencies -->
   <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="./node_modules/underscore/underscore.js"></script>
-  <script type="text/javascript" src="./node_modules/underscore/underscore.js"></script>
+
+  <!-- Dependencies for Angular UI Bootstrap -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-touch.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
   <script type="text/javascript" src="./node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+
+  <!-- Chart Dependencies -->
+  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+
 </head>
 <body>
   <div ng-app="app" ng-controller="mainCtrl">
-    <movie />
+    <!-- <div>
+      <graph />
+    </div> -->
+    <graph></graph>
+    <movie-tickets></movie-tickets>
+    <movie></movie>
   </div>
   <script type="text/javascript" src="./bundle/app.js"></script>
 </body>

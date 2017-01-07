@@ -1,7 +1,7 @@
 app.directive('movie', function() {
   return {
     restrict: 'EA',
-    templateUrl: './js/directives/movie.html',
-    scope: true
+    scope: true,
+    templateUrl: './src/directives/movie/movie.html'
   };
 });

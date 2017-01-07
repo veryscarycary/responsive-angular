@@ -6,11 +6,11 @@ var ngAnnotate = require('gulp-ng-annotate')
 var sass = require('gulp-sass');
 
 gulp.task('js', function () {
-  gulp.src(['js/**/module.js', 'js/**/*.js'])
+  gulp.src(['src/**/module.js', 'src/**/*.js'])
     .pipe(sourcemaps.init())
       .pipe(concat('app.js'))
-      .pipe(ngAnnotate())
-      .pipe(uglify())
+      .pipe(ngAnnotate().on('error', (e)=>{console.log(e)}))
+      .pipe(uglify().on('error', (e)=>{console.log(e)}) )
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./bundle'));
 });
@@ -25,5 +25,5 @@ gulp.task('convert-sass', function() {
 
 gulp.task('watch', ['convert-sass', 'js'], function() {
   gulp.watch('styles/**/*.scss', ['convert-sass']);
-  gulp.watch('js/**/*.js', ['js']);
+  gulp.watch('src/**/*.js', ['js']);
 });
