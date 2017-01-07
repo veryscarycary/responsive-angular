@@ -1,7 +1,16 @@
 var app = angular.module('app', ['ui.bootstrap', 'chart.js']);
 
-app.controller('mainCtrl', function($scope) {
-
+app.controller('mainCtrl', function($scope, dates) {
+  $scope.movies = [
+    {
+      title: 'Movie 1',
+      releaseDate: dates.randomRecentDate()
+    },
+    {
+      title: 'Movie 2',
+      releaseDate: dates.randomRecentDate()
+    }
+  ];
 })
 .controller('lineCtrl', function($scope) {
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];

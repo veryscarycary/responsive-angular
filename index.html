@@ -17,18 +17,20 @@
   <script type="text/javascript" src="./node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
 
   <!-- Chart Dependencies -->
+  <script src="node_modules/moment/min/moment.min.js"></script>
   <script src="node_modules/chart.js/dist/Chart.min.js"></script>
   <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
 
 </head>
 <body>
   <div ng-app="app" ng-controller="mainCtrl">
-    <!-- <div>
-      <graph />
-    </div> -->
-    <graph></graph>
+    <div ng-controller="lineCtrl">
+      <canvas id="line" class="chart chart-line" chart-data="data"
+        chart-labels="labels" chart-series="series" chart-options="options"
+        chart-dataset-override="datasetOverride" chart-click="onClick">
+      </canvas>
+    </div>
     <movie-tickets></movie-tickets>
-    <movie></movie>
   </div>
   <script type="text/javascript" src="./bundle/app.js"></script>
 </body>
