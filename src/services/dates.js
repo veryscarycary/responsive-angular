@@ -1,19 +1,22 @@
 app.factory('dates', function () {
 
-
+  // formats to e.g. 01 Jan 2017
   var formatDate = function (inputDate) {
-    inputDate = inputDate || moment();
+    inputDate = inputDate || new Date();
 
     var date = inputDate.toString().slice(4,15).split('');
     var day = date.splice(4, 2, date[0], date[1], date[2]).join('');
     date = day + date.join('').slice(3);
+
+    return date;
   };
 
+  // formats to Jan 1 2017
   var formatMonthFirstDate = function (inputDate) {
-    inputDate = inputDate || moment();
+    inputDate = inputDate || new Date();
 
     var inputDate = formatDate(inputDate).split(''); // stringified, arrayed to e.g. '04 Jan 2017'
-    var day = Number(inputDate.splice(0, 3)).toString();
+    var day = Number(inputDate.splice(0, 3).join('')).toString();
     // at this point, input date is 'Jan 2017' in array form
     var addedSpace = false;
     for (var i = 0; i < day.length; i++) {
@@ -24,12 +27,12 @@ app.factory('dates', function () {
       inputDate.splice(i+4, 0, day[i]);
     }
 
-    return inputDate;
+    return inputDate.join('');
   };
 
+  // will return a recent date within the last month
   var randomRecentDate = function () {
-    return formatDate( );
-    // new Date( Date.now() - (Math.random() * 9999999))
+    return formatDate(new Date( Date.now() - Math.floor(Math.random() * 2.62e9) ));
   };
 
   return {
