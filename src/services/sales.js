@@ -19,7 +19,15 @@ app.factory('sales', function () {
     return totalArray.join('');
   };
 
+  var maxSales = function (array1, array2) {
+    var last1 = array1[array1.length - 1];
+    var last2 = array2[array2.length - 1];
+    var max = (last1 >= last2) ? last1 : last2;
+    return max.toString() + ',000';
+  };
+
   return {
-    allSales: addSales
+    allSales: addSales,
+    peakLastMonthSales: maxSales
   };
 });

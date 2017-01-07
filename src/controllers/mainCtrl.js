@@ -15,8 +15,12 @@ app.controller('mainCtrl', function($scope, dates, sales) {
       salesRegion: 'United States'
     }
   ];
+
+  // Sales info
   $scope.allSales = sales.allSales;
 
+  // Date info
+  $scope.lastUpdatedDate = dates.lastUpdatedDate.replace(/\//g, '.');
   $scope.formatMonthFirstDate = dates.formatMonthFirstDate;
   $scope.tomorrow = dates.tomorrow;
 });

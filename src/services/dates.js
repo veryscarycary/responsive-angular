@@ -45,6 +45,7 @@ app.factory('dates', function () {
     currentDate: formatDate,
     formatMonthFirstDate: formatMonthFirstDate,
     randomRecentDate: randomRecentDate,
-    tomorrow: tomorrow
+    tomorrow: tomorrow,
+    lastUpdatedDate: moment().format('MM/DD/YYYY')
   };
 });
