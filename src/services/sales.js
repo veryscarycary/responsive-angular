@@ -22,4 +22,4 @@ app.factory('sales', function () {
   return {
     allSales: addSales
   };
-};
+});
