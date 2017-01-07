@@ -25,10 +25,15 @@
 <body>
   <div ng-app="app" ng-controller="mainCtrl">
     <div ng-controller="lineCtrl">
+      <total-sales></total-sales>
       <canvas id="line" class="chart chart-line" chart-data="data"
         chart-labels="labels" chart-series="series" chart-options="options"
         chart-dataset-override="datasetOverride" chart-click="onClick">
       </canvas>
+      <div>
+        <sales-analysis></sales-analysis>
+        <update></update>
+      </div>
     </div>
     <movie-tickets></movie-tickets>
   </div>
