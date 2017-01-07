@@ -11,6 +11,9 @@ app.controller('mainCtrl', function($scope, dates) {
       releaseDate: dates.randomRecentDate()
     }
   ];
+
+  $scope.formatMonthFirstDate = dates.formatMonthFirstDate;
+  $scope.tomorrow = dates.tomorrow;
 })
 .controller('lineCtrl', function($scope) {
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];

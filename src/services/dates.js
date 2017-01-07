@@ -35,9 +35,16 @@ app.factory('dates', function () {
     return formatDate(new Date( Date.now() - Math.floor(Math.random() * 2.62e9) ));
   };
 
+  var tomorrow = function () {
+    var today = moment();
+    var tomorrow = moment(today).add(1, 'day');
+    return tomorrow;
+  };
+
   return {
     currentDate: formatDate,
     formatMonthFirstDate: formatMonthFirstDate,
-    randomRecentDate: randomRecentDate
+    randomRecentDate: randomRecentDate,
+    tomorrow: tomorrow
   };
 });
