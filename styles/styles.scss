@@ -49,9 +49,6 @@ html, body {
     };
   }
 
-  #graphAndOrdersContainer {
-    @include margin(20px, 0px, 20px, 0px);
-  }
 
   .movies {
     h2 {
@@ -63,6 +60,10 @@ html, body {
     @include respond-to('medium') {
       width: 50%;
     }
+  }
+  
+  #graphAndOrdersContainer {
+    @include margin(20px, 0px, 20px, 0px);
   }
 
   #totalMoviesSalesContainer {
