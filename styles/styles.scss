@@ -1,5 +1,69 @@
+@import 'breakpoints';
+@import 'mixins';
+
 $app-background-color: #f3f3f4;
 
-html {
+h1,h2,h3,h4,h5 {
+  @include padding(0px, 0px, 10px, 0px);
+  @include margin(0px, 0px, 10px, 0px);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
   background-color: $app-background-color;
-};
+
+  table {
+    width: 100%;
+    .text-align-center {
+      @include padding(5px, 0px, 5px, 0px);
+      text-align: center;
+    }
+  }
+
+
+  .box-padding {
+    @include padding(20px, 20px, 20px, 20px);
+    @include margin(20px, 20px, 20px, 20px);
+    background-color: #fff;
+    border-style: solid;
+    border-width: thin;
+    border-color: darken($app-background-color, 5%);
+  }
+
+  .order-totals {
+    height: 50%;
+    font-size: 22px;
+  }
+
+  .flex-col {
+    @include flex('col');
+  }
+
+  .flex-row {
+    @include flex('row');
+  }
+
+  .graph {
+    @include respond-to('large') {
+      width: 66%;
+    };
+  }
+
+  .movies {
+    @include respond-to('small') {
+      width: 100%;
+    }
+    @include respond-to('medium') {
+      width: 50%;
+    }
+  }
+
+  #salesAndUpdateContainer {
+    @include flex('col', 'space-around');
+  }
+
+  #orders-comparison {
+    @include padding(10px, 10px, 10px, 10px);
+  }
+}

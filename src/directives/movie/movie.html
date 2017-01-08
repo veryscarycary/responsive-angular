@@ -1,13 +1,13 @@
 <h2>{{movie.title}}</h2>
-<p>Release Date {{movie.releaseDate}}</p>
+<p><strong>Release Date</strong> &#128344; {{movie.releaseDate}}</p>
 
 <table>
   <tr>
     <td>{{formatMonthFirstDate()}}</td>
-    <td><button class="btn btn-primary">Buy Tickets</button></td>
+    <td class="text-align-center"><button class="btn btn-primary">Buy Tickets</button></td>
   </tr>
   <tr>
     <td>{{formatMonthFirstDate( tomorrow() )}}</td>
-    <td><button class="btn btn-primary">Buy Tickets</button></td>
+    <td class="text-align-center"><button class="btn btn-primary">Buy Tickets</button></td>
   </tr>
 </table>

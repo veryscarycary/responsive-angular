@@ -3,8 +3,8 @@
 <head>
   <title>Responsive Angular App</title>
   <!-- CSS -->
-  <link rel="stylesheet" href="./bundle/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="./bundle/styles.css">
 
   <!-- JS Dependencies -->
   <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
@@ -23,20 +23,29 @@
 
 </head>
 <body>
+
   <div ng-app="app" ng-controller="mainCtrl">
-    <div ng-controller="lineCtrl">
+    <div class="box-padding" ng-controller="lineCtrl">
+
       <total-sales></total-sales>
-      <canvas id="line" class="chart chart-line" chart-data="data"
-        chart-labels="labels" chart-series="series" chart-options="options"
-        chart-dataset-override="datasetOverride" chart-click="onClick">
-      </canvas>
-      <orders-comparison></orders-comparison>
-      <div>
+      <div class="flex-row">
+        <div class="graph">
+          <canvas id="line" class="graph chart chart-line" chart-data="data"
+            chart-labels="labels" chart-series="series" chart-options="options"
+            chart-dataset-override="datasetOverride" chart-click="onClick">
+          </canvas>
+        </div>
+        <orders-comparison id="orders-comparison"></orders-comparison>
+
+      </div>
+      <div id="salesAndUpdateContainer">
         <sales-analysis></sales-analysis>
         <update></update>
       </div>
+
     </div>
-    <movie-tickets></movie-tickets>
+    <movie-tickets class="flex-row"></movie-tickets>
+
   </div>
   <script type="text/javascript" src="./bundle/app.js"></script>
 </body>

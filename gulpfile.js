@@ -16,7 +16,8 @@ gulp.task('js', function () {
 });
 
 gulp.task('convert-sass', function() {
-    return gulp.src('./styles/*')
+    return gulp.src(['./styles/_reset.scss',
+      './styles/_breakpoints.scss', './styles/*'])
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(sourcemaps.write('./maps'))
