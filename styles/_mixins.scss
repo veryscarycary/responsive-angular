@@ -12,9 +12,9 @@
   margin-left: $left;
 };
 
-@mixin flex($args...) {
+@mixin flex($direction, $justify, $align-items) {
   display: flex;
-  flex-direction: $args;
-  justify-content: $args;
-  align-items: $args;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align-items;
 };
