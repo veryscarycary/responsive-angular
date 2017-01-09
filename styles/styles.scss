@@ -8,6 +8,8 @@ h1,h2,h3,h4,h5 {
   @include margin(0px, 0px, 0px, 0px);
 }
 
+// Start of nexted heir
+
 html, body {
   width: 100%;
   height: 100%;
@@ -44,41 +46,73 @@ html, body {
   }
 
   .graph {
+    @include respond-to('small') {
+      width: 100%;
+    }
+    @include respond-to('medium') {
+      width: 66%;
+    }
     @include respond-to('large') {
       width: 66%;
-    };
+    }
   }
-
 
   .movies {
     h2 {
       @include margin(0px, 0px, 10px, 0px);
     }
-    @include respond-to('small') {
-      width: 100%;
-    }
-    @include respond-to('medium') {
-      width: 50%;
-    }
-  }
-  
-  #graphAndOrdersContainer {
-    @include margin(20px, 0px, 20px, 0px);
   }
 
   #totalMoviesSalesContainer {
+    @include respond-to('small') {
+      @include flex(column, null, null);
+    }
+    @include respond-to('medium') {
+      @include flex(row, null, null);
+    }
+
     @include flex(row, space-between, null);
   }
+
+  #graphAndOrdersContainer {
+    @include margin(20px, 0px, 20px, 0px);
+
+    @include respond-to('small') {
+      @include flex(column, null, null);
+    }
+    @include respond-to('medium') {
+      @include flex(row, null, null);
+    }
+  }
+
 
   #salesAndUpdateContainer {
     @extend #totalMoviesSalesContainer;
   }
 
   #orders-comparison {
-    @include respond-to('large') {
+    @include respond-to('small') {
+      @include flex(row, space-around, null);
+    }
+    @include respond-to('medium') {
+      @include flex(column, space-around, center);
       width: 33%;
     }
-    @include flex(column, space-around, center);
+    @include respond-to('large') {
+      @include flex(column, space-around, center);
+      width: 33%;
+    }
+
     @include padding(10px, 10px, 10px, 10px);
+  }
+
+  #movie-tickets-container {
+    @include respond-to('small') {
+      @include flex(column, null, null);
+    }
+    @include respond-to('medium') {
+      @include flex(row, space-around, null);
+      width: 50%;
+    }
   }
 }

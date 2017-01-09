@@ -27,8 +27,8 @@
   <div ng-app="app" ng-controller="mainCtrl">
     <div class="box-padding" ng-controller="lineCtrl">
       <total-sales id="totalMoviesSalesContainer"></total-sales>
-      <div class="flex-row">
-        <div id="graphAndOrdersContainer" class="graph">
+      <div id="graphAndOrdersContainer">
+        <div class="graph">
           <canvas id="line" class="graph chart chart-line" chart-data="data"
             chart-labels="labels" chart-series="series" chart-options="options"
             chart-dataset-override="datasetOverride" chart-click="onClick">
@@ -43,7 +43,7 @@
       </div>
 
     </div>
-    <movie-tickets class="flex-row"></movie-tickets>
+    <movie-tickets></movie-tickets>
 
   </div>
   <script type="text/javascript" src="./bundle/app.js"></script>
