@@ -24,6 +24,7 @@ html, body {
     }
   }
 
+
   .box-padding-margin {
     $p: 20px;
     $m: 20px;
@@ -65,7 +66,7 @@ html, body {
   }
 
   .order-totals {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   #graphAndOrdersContainer {
@@ -95,6 +96,25 @@ html, body {
     @include respond-to('medium') {
       @include flex(column, space-around, center);
       width: 33%;
+    }
+
+    .orders-bar {
+      background-color: #eee;
+      border-radius: 200px;
+      height: 10px;
+      width: inherit;
+
+      .orders-bar-color-odd {
+        @extend .orders-bar;
+        background-color: #97bbcd;
+        width: 50%;
+      }
+
+      .orders-bar-color-even {
+        @extend .orders-bar;
+        @extend .orders-bar-color-odd;
+        background-color: #dcdcdc;
+      }
     }
 
     @include padding(10px, 10px, 10px, 10px);

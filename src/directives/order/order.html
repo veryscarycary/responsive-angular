@@ -1,4 +1,7 @@
 <div>
   <span class="order-totals">{{movie.totalOrders}}</span><br />
   Total orders - {{movie.title}}
+  <div class="orders-bar">
+    <div ng-class-odd="'orders-bar-color-odd'" ng-class-even="'orders-bar-color-even'"></div>
+  </div>
 </div>
