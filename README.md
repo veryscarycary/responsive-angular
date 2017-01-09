@@ -36,7 +36,6 @@
 
 ## To Run
 
-      In Terminal from the root folder, npm install
-      Then, npm start
+      In Terminal from the root folder, npm start
       Visit http://localhost:3000 (or your set env $PORT) and Voila!
       
