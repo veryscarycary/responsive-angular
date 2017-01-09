@@ -57,6 +57,9 @@ html, body {
     h2 {
       @include margin(0px, 0px, 10px, 0px);
     }
+    @include respond-to('tiny') {
+      width: auto;
+    }
     @include respond-to('small') {
       width: auto;
     }
