@@ -2,13 +2,14 @@
 @import 'mixins';
 
 $app-background-color: #f3f3f4;
+$boxes-background-color: #fff;
 
 h1,h2,h3,h4,h5 {
   @include padding(0px, 0px, 0px, 0px);
   @include margin(0px, 0px, 0px, 0px);
 }
 
-// Start of nexted heir
+// START of nexted heirarchy of styles
 
 html, body {
   width: 100%;
@@ -23,18 +24,15 @@ html, body {
     }
   }
 
-
-  .box-padding {
-    @include padding(20px, 20px, 20px, 20px);
-    @include margin(20px, 20px, 20px, 20px);
-    background-color: #fff;
+  .box-padding-margin {
+    $p: 20px;
+    $m: 20px;
+    @include padding($p, $p, $p, $p);
+    @include margin($m, $m, $m, $m);
+    background-color: $boxes-background-color;
     border-style: solid;
     border-width: thin;
     border-color: darken($app-background-color, 5%);
-  }
-
-  .order-totals {
-    font-size: 24px;
   }
 
   .flex-col {
@@ -52,9 +50,6 @@ html, body {
     @include respond-to('medium') {
       width: 66%;
     }
-    @include respond-to('large') {
-      width: 66%;
-    }
   }
 
   .movies {
@@ -69,15 +64,8 @@ html, body {
     }
   }
 
-  #totalMoviesSalesContainer {
-    @include respond-to('small') {
-      @include flex(column, null, null);
-    }
-    @include respond-to('medium') {
-      @include flex(row, null, null);
-    }
-
-    @include flex(row, space-between, null);
+  .order-totals {
+    font-size: 24px;
   }
 
   #graphAndOrdersContainer {
@@ -91,9 +79,13 @@ html, body {
     }
   }
 
-
-  #salesAndUpdateContainer {
-    @extend #totalMoviesSalesContainer;
+  #movie-tickets-container {
+    @include respond-to('small') {
+      @include flex(column, null, null);
+    }
+    @include respond-to('medium') {
+      @include flex(row, space-around, null);
+    }
   }
 
   #orders-comparison {
@@ -104,20 +96,27 @@ html, body {
       @include flex(column, space-around, center);
       width: 33%;
     }
-    @include respond-to('large') {
-      @include flex(column, space-around, center);
-      width: 33%;
-    }
 
     @include padding(10px, 10px, 10px, 10px);
   }
 
-  #movie-tickets-container {
+  #salesAndUpdateContainer {
+    @include respond-to('medium') {
+      @include flex(column, null, null);
+    }
+    @include respond-to('large') {
+      @include flex(row, null, null);
+    }
+  }
+
+  #totalMoviesSalesContainer {
     @include respond-to('small') {
       @include flex(column, null, null);
     }
     @include respond-to('medium') {
-      @include flex(row, space-around, null);
+      @include flex(row, space-between, null);
     }
   }
 }
+
+// END of nested styles
