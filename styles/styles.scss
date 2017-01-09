@@ -61,6 +61,12 @@ html, body {
     h2 {
       @include margin(0px, 0px, 10px, 0px);
     }
+    @include respond-to('small') {
+      width: auto;
+    }
+    @include respond-to('medium') {
+      width: 50%;
+    }
   }
 
   #totalMoviesSalesContainer {
@@ -112,7 +118,6 @@ html, body {
     }
     @include respond-to('medium') {
       @include flex(row, space-around, null);
-      width: 50%;
     }
   }
 }
