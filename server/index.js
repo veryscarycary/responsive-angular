@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
@@ -15,3 +16,9 @@ app.listen(port, function (err) {
   console.log('Thanks for tuning in to KNODE. This is your host, Cary,' +
    ' and you\'re listening to port ' + port + '.');
 });
+
+
+// to keep heroku deployment awake
+setInterval(function() {
+  http.get('http://responsive-angular.herokuapp.com');
+}, 1200000); // every 20 minutes (1200000)
