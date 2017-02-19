@@ -19,6 +19,6 @@ app.listen(port, function (err) {
 
 
 // to keep heroku deployment awake
-setInterval(function() {
-  http.get('http://responsive-angular.herokuapp.com');
-}, 1200000); // every 20 minutes (1200000)
+// setInterval(function() {
+//   http.get('http://responsive-angular.herokuapp.com');
+// }, 1200000); // every 20 minutes (1200000)
